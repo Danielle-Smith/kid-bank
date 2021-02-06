@@ -1,16 +1,28 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
+function UserDetails(props) {
+    const [state, setState] = useState([]);
 
-
-function UserDetails() {
-   
+    useEffect(() => {
+        axios.get(
+            `http://localhost:5000/user/${props.match.params.slug}`,
+            console.log('trying to get user')
+          )
+          .then(response => setState(response.data), [])
+          .catch(error => console.log(error));
+  
+          
+    }, []);
+    
     return (
         <div>
-            <p>Name</p>
-            {/* <p>Amount: {amount}</p>
-            <button onClick={() => setAmount(amount + 1)}>
-                Click Me
-            </button> */}
+            <h1>Name: {state.name}</h1>
+            <p>Amount: ${state.amount}</p>
+            <input>
+            </input>
+            <button>+</button>
+            <button>-</button>
         </div>
     );
 }

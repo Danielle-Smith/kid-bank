@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Link from 'react-router-dom';
+import User from './user';
 
 
 const NameDisplay = () => {
@@ -22,17 +23,12 @@ const NameDisplay = () => {
         
       <div className="App">
         
-        <ul>
-            {
-            state.map(user => (
-                <li key={user.id}>
-                    {user.name}
-                    {user.amount}
-                    <Link to={`/user/${user.id}`}>update amount</Link>
-                </li>
-            ))
-            }
-        </ul>
+        {
+        state.map(user => (
+            <User key={user.id} id={user.id} name={user.name} amount={user.amount} slug={user.id}/>
+        ))
+        }
+        
       </div>
     );
 };
