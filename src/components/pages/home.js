@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NameDisplay from '../nameDisplay';
 
 
+
 const Home = () => {
   
   
