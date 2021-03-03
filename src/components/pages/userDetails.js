@@ -8,12 +8,27 @@ function UserDetails(props) {
     const [amount, setAmount] = useState();
 
     const handleSubmitSub = (e) => {
-        e.preventDefault();
-        setCount(state.amount - inputs.amount)
+        setCount(state.amount -= inputs.amount)
+        const amount = {
+            amount: state.amount
+        }
+        axios.patch(`http://localhost:5000/user-update/${props.match.params.slug}`, {
+            amount: state.amount
+        }).then(
+            console.log(state.amount, inputs.amount)
+        ).catch(err => console.log(err, "error"))
     }
     const handleSubmitAdd = (e) => {
-        e.preventDefault();
-        setCount(state.amount + inputs.amount)
+        let inputAmount = parseFloat(inputs.amount)
+        let amount = parseFloat(state.amount)
+        
+        setCount(amount += inputAmount)
+    
+        axios.patch(`http://localhost:5000/user-update/${props.match.params.slug}`, {
+            amount: amount
+        }).then(
+            console.log(amount, inputAmount)
+        ).catch(err => console.log(err, "error"))
     }
 
     useEffect(() => {
