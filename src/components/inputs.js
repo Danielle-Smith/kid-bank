@@ -1,14 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 const useForm = () => {
     const [inputs, setInputs] = useState({});
-
-    // const handleSubmit = (event) => {
-    //     if (event) {
-    //         event.preventDefault();
-
-    //     }
-    // }
 
     const handleInputChange = (event) => {
         event.persist();

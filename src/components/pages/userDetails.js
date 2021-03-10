@@ -1,34 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link, Redirect } from 'react-router-dom';
 import useForm from '../inputs';
 
 function UserDetails(props) {
     const [state, setState] = useState([]);
+    let redirect = false;
     
-    const [amount, setAmount] = useState();
 
     const handleSubmitSub = (e) => {
-        setCount(state.amount -= inputs.amount)
-        const amount = {
-            amount: state.amount
+        if (inputs.amount) {
+            setCount(state.amount -= inputs.amount)
+            const amount = {
+                amount: state.amount
+            }
+            axios.patch(`http://localhost:5000/user-update/${props.match.params.slug}`, {
+                amount: state.amount
+            }).then(
+                console.log(state.amount, inputs.amount)
+            ).catch(err => console.log(err, "error"))
         }
-        axios.patch(`http://localhost:5000/user-update/${props.match.params.slug}`, {
-            amount: state.amount
-        }).then(
-            console.log(state.amount, inputs.amount)
-        ).catch(err => console.log(err, "error"))
     }
     const handleSubmitAdd = (e) => {
-        let inputAmount = parseFloat(inputs.amount)
-        let amount = parseFloat(state.amount)
+        if (inputs.amount) {
+            let inputAmount = parseFloat(inputs.amount)
+            let amount = parseFloat(state.amount)
+            
+            setCount(amount += inputAmount)
         
-        setCount(amount += inputAmount)
-    
-        axios.patch(`http://localhost:5000/user-update/${props.match.params.slug}`, {
-            amount: amount
-        }).then(
-            console.log(amount, inputAmount)
-        ).catch(err => console.log(err, "error"))
+            axios.patch(`http://localhost:5000/user-update/${props.match.params.slug}`, {
+                amount: amount
+            }).then(
+                console.log(amount, inputAmount)
+            ).catch(err => console.log(err, "error"))
+        }
     }
 
     useEffect(() => {
@@ -39,11 +44,31 @@ function UserDetails(props) {
           .catch(error => console.log(error));
     }, []);
 
+    const handleDelete = (e) => {
+        let redirect = true
+        axios.delete(`http://localhost:5000/delete-user/${props.match.params.slug}`
+        ).then(console.log('User', props.match.params.slug),
+        e.preventDefault()
+        
+
+        ).catch(error => {
+            console.log("delete error", error);
+        });
+        
+
+    }
+
     const {inputs, handleInputChange} = useForm(inputs);
     const [count, setCount] = useState();
+    
+    if (redirect === true) {
+        <Redirect to="/" />
+    }
     return (
         <div>
+            <Link to='/'>Back</Link>
             <h1>Name: {state.name}</h1>
+            <p onClick={handleDelete}>X</p>
             <p>Amount: ${state.amount}</p>
             <form >
                 <input 
