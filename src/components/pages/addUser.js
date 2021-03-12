@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import useForm from '../inputs';
 
 const AddUser = () => {
+    // const [added, isAdded] = useState(false);
 
     const handleSubmit = (e) => {
         axios({
@@ -13,8 +14,10 @@ const AddUser = () => {
                 name: inputs.name,
                 amount: inputs.amount
             }
-        }).then(console.log(inputs.amount)
-        ).catch(err => console.log(err, "error"))
+        }).then(res => {
+            props.history.push("/");
+
+        }).catch(err => console.log(err, "error"))
     }
     
     const {inputs, handleInputChange} = useForm(inputs);
@@ -41,5 +44,5 @@ const AddUser = () => {
         </div>
     )
 }
-
-export default AddUser;
+const AddUserWithRouter = withRouter(AddUser);
+export default AddUserWithRouter;

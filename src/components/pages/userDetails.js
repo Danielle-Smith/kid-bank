@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, withRouter } from 'react-router-dom';
 import useForm from '../inputs';
 
 function UserDetails(props) {
@@ -47,11 +47,9 @@ function UserDetails(props) {
     const handleDelete = (e) => {
         let redirect = true
         axios.delete(`http://localhost:5000/delete-user/${props.match.params.slug}`
-        ).then(console.log('User', props.match.params.slug),
-        e.preventDefault()
-        
-
-        ).catch(error => {
+        ).then(res => {
+            props.history.push("/");
+        }).catch(error => {
             console.log("delete error", error);
         });
         
@@ -84,5 +82,5 @@ function UserDetails(props) {
         </div>
     );
 }
-
-export default UserDetails;
+const UserDetailsWithRouter = withRouter(UserDetails);
+export default UserDetailsWithRouter;
