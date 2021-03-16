@@ -5,9 +5,7 @@ import useForm from '../inputs';
 
 function UserDetails(props) {
     const [state, setState] = useState([]);
-    let redirect = false;
     
-
     const handleSubmitSub = (e) => {
         if (inputs.amount) {
             setCount(state.amount -= inputs.amount)
@@ -58,10 +56,7 @@ function UserDetails(props) {
 
     const {inputs, handleInputChange} = useForm(inputs);
     const [count, setCount] = useState();
-    
-    if (redirect === true) {
-        <Redirect to="/" />
-    }
+
     return (
         <div>
             <Link to='/'>Back</Link>
