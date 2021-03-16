@@ -33,6 +33,7 @@ function UserDetails(props) {
             }).then(
                 console.log(amount, inputAmount)
             ).catch(err => console.log(err, "error"))
+            
         }
     }
 
@@ -52,8 +53,7 @@ function UserDetails(props) {
         }).catch(error => {
             console.log("delete error", error);
         });
-        
-
+        e.preventDefault();
     }
 
     const {inputs, handleInputChange} = useForm(inputs);
