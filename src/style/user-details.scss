@@ -1,0 +1,79 @@
+.user-details-container {
+    margin: 10px 0px;
+
+    .back-link {
+        color: gray;
+        font-size: 2em;
+        margin: 10px;
+
+        &:hover {
+            color: rgb(87, 85, 85);
+            text-decoration: none;
+        }
+    }
+
+    .user-details-wrapper {
+        display: flex;
+        justify-content: center;
+        padding-top: 15%;
+    }
+
+    .user-details {
+
+        .name-display {
+            display: flex;
+            
+
+            p {
+                color: rgb(167, 80, 80);
+                padding: 2px 0px 8px 20px;
+                font-weight: 700;
+                font-size: 1.5em;
+                align-self: flex-end;
+                cursor: pointer;
+            }
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: 700;  
+        }
+
+        p {
+            font-size: 2em;
+            margin: 10px;
+        }
+
+        input {
+            font-size: 1em;
+            margin: 15px 0px;
+            padding-left: 5px;
+        }
+
+        .amount-form {
+            font-size: 2em;
+            margin: 10px;
+
+            button {
+                color: rgb(226, 224, 224);
+                background-color: rgb(85, 123, 206);
+                border:  rgb(85, 123, 206);
+                border-radius: 2px;
+                margin-left: 10px;
+                width: 30px;
+
+            }
+        }
+    }
+
+}
+
+@media(max-width: 500px) {
+    .user-details-wrapper {
+        padding: 20px 8px;
+    }
+
+    input {
+        width: 100px;
+    }
+}

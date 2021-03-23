@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, Redirect, withRouter } from 'react-router-dom';
 import useForm from '../inputs';
+import { FaTrash } from "react-icons/fa";
 
 function UserDetails(props) {
     const [state, setState] = useState([]);
@@ -58,22 +59,30 @@ function UserDetails(props) {
     const [count, setCount] = useState();
 
     return (
-        <div>
-            <Link to='/'>Back</Link>
-            <h1>Name: {state.name}</h1>
-            <p onClick={handleDelete}>X</p>
-            <p>Amount: ${state.amount}</p>
-            <form >
-                <input 
-                    type="text" 
-                    name="amount"
-                    value={inputs.amount} 
-                    placeholder="Amount"
-                    onChange={handleInputChange}>
-                </input>
-                <button type="submit" onClick={handleSubmitAdd}>+</button>
-                <button type="submit" onClick={handleSubmitSub}>-</button>
-            </form>
+        <div className='user-details-container'>
+            <Link className='back-link' to='/'>Back</Link>
+            <div className="user-details-wrapper">
+                <div className="user-details">
+                    <div className='name-display'>
+                        <h1>{state.name}</h1>
+                        <p onClick={handleDelete}>
+                            <FaTrash />
+                        </p>
+                    </div>
+                    <p>Amount: ${state.amount}</p>
+                    <form className="amount-form">
+                        <input 
+                            type="text" 
+                            name="amount"
+                            value={inputs.amount} 
+                            placeholder="Amount"
+                            onChange={handleInputChange}>
+                        </input>
+                        <button className="button" type="submit" onClick={handleSubmitAdd}>+</button>
+                        <button className="button" onClick={handleSubmitSub}>-</button>
+                    </form>
+                </div>
+            </div>
         </div>
     );
 }

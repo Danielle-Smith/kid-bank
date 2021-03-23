@@ -1,0 +1,26 @@
+.app {
+    .add-user-link {
+        color: gray;
+        font-size: 1.5em;
+        margin: 20px 0px;
+
+        &:hover {
+            color: rgb(87, 85, 85);
+            text-decoration: none;
+        }
+    }
+
+
+
+    a {
+        text-decoration: none;
+        color: rgb(85, 123, 206);
+
+        &:hover {
+            color: rgb(47, 72, 136);
+            text-decoration: none;
+        }
+    }
+
+
+}

@@ -19,11 +19,11 @@ const NameDisplay = () => {
     return (
         
       <div className="App">
-        <Link to="/add-user">Add User</Link>
+        <Link className="add-user-link" to="/add-user">Add User</Link>
         
         {
         state.map(user => (
-            <User key={user.id} id={user.id} name={user.name} amount={user.amount} slug={user.id}/>    
+            <User className="user" key={user.id} id={user.id} name={user.name} amount={user.amount} slug={user.id}/>    
         ))
         }
         

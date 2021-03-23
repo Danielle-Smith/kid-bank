@@ -26,3 +26,11 @@ body {
     display: grid;
     justify-items: center;
 }
+
+h1 {
+    font-size: 3em;
+    font-weight: 700;  
+}
+
+@import "./user-details";
+@import "./home";
