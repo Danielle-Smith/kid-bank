@@ -1,8 +1,15 @@
 .app {
+    .title {
+        font-size: 6em;
+        color: rgb(80, 78, 78);
+        font-weight: 700;
+        margin: 50px 0px 30px 0px;
+    }
+
     .add-user-link {
-        color: gray;
+        color: rgb(145, 142, 142);
         font-size: 1.5em;
-        margin: 20px 0px;
+        font-weight: 700;
 
         &:hover {
             color: rgb(87, 85, 85);
@@ -10,7 +17,9 @@
         }
     }
 
-
+    .user-name-amount {
+        margin: 20px 0px;
+    }
 
     a {
         text-decoration: none;

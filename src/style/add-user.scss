@@ -1,0 +1,49 @@
+.add-user {
+    
+    .back-link {
+        font-size: 2em;
+        margin: 10px;
+
+        &:hover {
+            color: #2e4474;
+            text-decoration: none;
+        }
+    }
+
+    .add-user-form {
+        display: flex;
+        flex-direction: column;
+        margin: 30px;
+        align-items: center;
+    }
+
+    input {
+        height: 30px;
+        width: 200px;
+        font-size: 2em;
+        margin: 7px;
+        padding-left: 3px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        color: #e2e0e0;
+        background-color: #557bce;
+        border: none;
+        border-radius: 2px;
+        margin: 20px;
+        width: 100px;
+        height: 30px;
+        font-size: 1.4em;
+        font-weight: 700;
+
+        &:hover {
+            background-color: #2e4474;
+            border: none;
+        }
+
+    }
+}

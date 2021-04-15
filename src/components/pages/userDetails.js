@@ -6,7 +6,7 @@ import { FaTrash } from "react-icons/fa";
 
 function UserDetails(props) {
     const [state, setState] = useState([]);
-    
+
     const handleSubmitSub = (e) => {
         if (inputs.amount) {
             setCount(state.amount -= inputs.amount)
@@ -24,24 +24,24 @@ function UserDetails(props) {
         if (inputs.amount) {
             let inputAmount = parseFloat(inputs.amount)
             let amount = parseFloat(state.amount)
-            
+
             setCount(amount += inputAmount)
-        
+
             axios.patch(`http://localhost:5000/user-update/${props.match.params.slug}`, {
                 amount: amount
             }).then(
                 console.log(amount, inputAmount)
             ).catch(err => console.log(err, "error"))
-            
+
         }
     }
 
     useEffect(() => {
         axios.get(
             `http://localhost:5000/user/${props.match.params.slug}`
-          )
-          .then(response => setState(response.data), [])
-          .catch(error => console.log(error));
+        )
+            .then(response => setState(response.data), [])
+            .catch(error => console.log(error));
     }, []);
 
     const handleDelete = (e) => {
@@ -55,7 +55,7 @@ function UserDetails(props) {
         e.preventDefault();
     }
 
-    const {inputs, handleInputChange} = useForm(inputs);
+    const { inputs, handleInputChange } = useForm(inputs);
     const [count, setCount] = useState();
 
     return (
@@ -64,17 +64,17 @@ function UserDetails(props) {
             <div className="user-details-wrapper">
                 <div className="user-details">
                     <div className='name-display'>
-                        <h1>{state.name}</h1>
+                        <div className="name">{state.name}</div>
                         <p onClick={handleDelete}>
                             <FaTrash />
                         </p>
                     </div>
                     <p>Amount: ${state.amount}</p>
                     <form className="amount-form">
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             name="amount"
-                            value={inputs.amount} 
+                            value={inputs.amount}
                             placeholder="Amount"
                             onChange={handleInputChange}>
                         </input>

@@ -1,13 +1,11 @@
 .user-details-container {
-    margin: 10px 0px;
 
     .back-link {
-        color: gray;
         font-size: 2em;
         margin: 10px;
 
         &:hover {
-            color: rgb(87, 85, 85);
+            color: #2e4474;
             text-decoration: none;
         }
     }
@@ -23,6 +21,11 @@
         .name-display {
             display: flex;
             
+            .name {
+                color: rgb(80, 78, 78);
+                font-size: 4em;
+                font-weight: 700;
+            }
 
             p {
                 color: rgb(167, 80, 80);
@@ -41,7 +44,7 @@
 
         p {
             font-size: 2em;
-            margin: 10px;
+            margin: 10px 0px;
         }
 
         input {
@@ -52,15 +55,20 @@
 
         .amount-form {
             font-size: 2em;
-            margin: 10px;
+            margin: 10px 0px;
 
             button {
                 color: rgb(226, 224, 224);
-                background-color: rgb(85, 123, 206);
-                border:  rgb(85, 123, 206);
+                background-color:rgb(85, 123, 206);
+                border: none;
                 border-radius: 2px;
                 margin-left: 10px;
                 width: 30px;
+
+                &:hover {
+                    background-color: #2e4474;
+                    border: none;
+                }
 
             }
         }

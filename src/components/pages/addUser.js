@@ -6,7 +6,7 @@ import useForm from '../inputs';
 
 
 const AddUser = (props) => {
-    
+
 
     const handleSubmit = (e) => {
         axios({
@@ -19,28 +19,28 @@ const AddUser = (props) => {
         }).then(res => {
             alert('User Added')
             props.history.push('/')
-            
+
         }).catch(err => console.log(err, "error"))
         e.preventDefault();
     }
-    
 
-    const {inputs, handleInputChange} = useForm(inputs);
+
+    const { inputs, handleInputChange } = useForm(inputs);
     return (
         <div className='add-user'>
-            <Link to='/'>Back</Link>
+            <Link className="back-link" to='/'>Back</Link>
             <form className='add-user-form'>
-                <input 
-                    type="text" 
+                <input
+                    type="text"
                     name="name"
-                    value={inputs.name} 
+                    value={inputs.name}
                     placeholder="Name"
                     onChange={handleInputChange}>
                 </input>
-                <input 
-                    type="text" 
+                <input
+                    type="text"
                     name="amount"
-                    value={inputs.amount} 
+                    value={inputs.amount}
                     placeholder="Amount"
                     onChange={handleInputChange}>
                 </input>

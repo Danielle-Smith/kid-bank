@@ -25,12 +25,15 @@ body {
     margin-top: 2rem;
     display: grid;
     justify-items: center;
+    font-family: 'Prompt', sans-serif;
 }
 
 h1 {
     font-size: 3em;
-    font-weight: 700;  
+    font-weight: 400;
+    font-family: 'Prompt', sans-serif;  
 }
 
 @import "./user-details";
 @import "./home";
+@import "./add-user";
