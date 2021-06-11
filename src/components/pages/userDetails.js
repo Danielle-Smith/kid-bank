@@ -59,28 +59,31 @@ function UserDetails(props) {
     const [count, setCount] = useState();
 
     return (
-        <div className='user-details-container'>
-            <Link className='back-link' to='/'>Back</Link>
-            <div className="user-details-wrapper">
-                <div className="user-details">
-                    <div className='name-display'>
-                        <div className="name">{state.name}</div>
-                        <p onClick={handleDelete}>
-                            <FaTrash />
-                        </p>
+        <div className="app">
+            <div className='user-details-container'>
+                <Link className='back-link' to='/'>Back</Link>
+                <div className="user-details-wrapper">
+                    <div className="user-details">
+                        <div className='name-display'>
+                            <div className="name">{state.name}</div>
+                            <p onClick={handleDelete}>
+                                <FaTrash />
+                            </p>
+                        </div>
+                        <h3>Amount: ${state.amount}</h3>
+                        <form className="amount-form">
+                            <div className="dollar-sign">$</div>
+                            <input
+                                type="text"
+                                name="amount"
+                                value={inputs.amount}
+                                placeholder="Amount"
+                                onChange={handleInputChange}>
+                            </input>
+                            <button className="button" type="submit" onClick={handleSubmitAdd}>+</button>
+                            <button className="button" onClick={handleSubmitSub}>-</button>
+                        </form>
                     </div>
-                    <p>Amount: ${state.amount}</p>
-                    <form className="amount-form">
-                        <input
-                            type="text"
-                            name="amount"
-                            value={inputs.amount}
-                            placeholder="Amount"
-                            onChange={handleInputChange}>
-                        </input>
-                        <button className="button" type="submit" onClick={handleSubmitAdd}>+</button>
-                        <button className="button" onClick={handleSubmitSub}>-</button>
-                    </form>
                 </div>
             </div>
         </div>

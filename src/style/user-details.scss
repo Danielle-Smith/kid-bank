@@ -1,16 +1,15 @@
 .user-details-container {
-    background-color: rgb(248, 249, 250);
-    height: 100vh;
-
-    .back-link {
-        font-size: 2em;
-        margin: 10px;
-
-        &:hover {
-            color: #2e4474;
-            text-decoration: none;
-        }
-    }
+    background-color: #fff;
+    width: 400px;
+    margin: 0px 50px 50px 50px;
+    padding: 0px 25px 25px 25px;
+    height: 550px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 4px 4px 15px -6px #000000;
+    border-radius: 2px;
 
     .user-details-wrapper {
         display: flex;
@@ -24,29 +23,29 @@
             display: flex;
             
             .name {
-                color: rgb(80, 78, 78);
-                font-size: 4em;
-                font-weight: 700;
+                color: $dark-gray;
+                font-size: 5em;
+                font-weight: 700; 
             }
 
             p {
-                color: rgb(167, 80, 80);
+                color: $trash-red;
                 padding: 2px 0px 8px 20px;
                 font-weight: 700;
                 font-size: 1.5em;
-                align-self: flex-end;
+                align-self: center;
                 cursor: pointer;
             }
         }
 
-        h1 {
-            font-size: 3em;
-            font-weight: 700;  
-        }
+       h3 {
+           padding-left: 30px;
+       }
 
         p {
             font-size: 2em;
             margin: 10px 0px;
+            padding-left: 30px;
         }
 
         input {
@@ -63,17 +62,26 @@
         .amount-form {
             font-size: 2em;
             margin: 10px 0px;
+            display: flex;
+            align-items: center;
+
+            .dollar-sign {
+                align-self: center;
+                font-size: 1.5em;
+            }
 
             button {
-                color: rgb(226, 224, 224);
-                background-color:rgb(85, 123, 206);
+                color: $white;
+                background-color: $red;
                 border: none;
                 border-radius: 2px;
                 margin-left: 10px;
-                width: 30px;
+                height: 40px;
+                width: 40px;
+                font-size: 1.2em;
 
                 &:hover {
-                    background-color: #2e4474;
+                    background-color: $dark-red;
                     border: none;
                 }
 

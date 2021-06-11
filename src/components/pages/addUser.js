@@ -4,9 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 import useForm from '../inputs';
 
-
 const AddUser = (props) => {
-
 
     const handleSubmit = (e) => {
         axios({
@@ -24,28 +22,32 @@ const AddUser = (props) => {
         e.preventDefault();
     }
 
-
     const { inputs, handleInputChange } = useForm(inputs);
     return (
-        <div className='add-user'>
-            <Link className="back-link" to='/'>Back</Link>
-            <form className='add-user-form'>
-                <input
-                    type="text"
-                    name="name"
-                    value={inputs.name}
-                    placeholder="Name"
-                    onChange={handleInputChange}>
-                </input>
-                <input
-                    type="text"
-                    name="amount"
-                    value={inputs.amount}
-                    placeholder="Amount"
-                    onChange={handleInputChange}>
-                </input>
-                <button type="submit" onClick={handleSubmit}>Add</button>
-            </form>
+        <div className="app">
+            <div className='add-user'>
+                <Link className="back-link" to='/'>Back</Link>
+                <form className='add-user-form'>
+                    <input
+                        type="text"
+                        name="name"
+                        value={inputs.name}
+                        placeholder="Name"
+                        onChange={handleInputChange}>
+                    </input>
+                    <div className="input-group">
+                        <div className="dollar-sign">$</div>
+                        <input
+                            type="text"
+                            name="amount"
+                            value={inputs.amount}
+                            placeholder="Amount"
+                            onChange={handleInputChange}>
+                        </input>
+                    </div>
+                    <button type="submit" onClick={handleSubmit}>Add</button>
+                </form>
+            </div>
         </div>
     )
 }
