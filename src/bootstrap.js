@@ -6,6 +6,7 @@ import App from './components/app';
 import 'bootstrap/dist/css/bootstrap.css';
 import './style/main.scss';
 
+
 function main() {
   ReactDOM.render(
     <App />

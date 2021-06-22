@@ -9,7 +9,7 @@ const NameDisplay = () => {
 
   useEffect(() => {
     axios.get(
-      `http://localhost:5000/users`,
+      `https://dds-piggy-bank-db.herokuapp.com/users`,
     )
       .then(response => setState(response.data), [])
       .catch(error => console.log(error));
