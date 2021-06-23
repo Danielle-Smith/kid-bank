@@ -11,7 +11,8 @@ const AddUser = (props) => {
             method: "POST",
             url: 'https://powerful-peak-61640.herokuapp.com/add-user',
             headers: {
-                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Origin': 'https://powerful-peak-61640.herokuapp.com',
+                'Access-Control-Allow-Methods': 'DELETE, POST, GET, OPTIONS',
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
