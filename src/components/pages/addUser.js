@@ -9,7 +9,7 @@ const AddUser = (props) => {
     const handleSubmit = (e) => {
         axios({
             method: "POST",
-            url: 'https://dds-piggy-bank-db.herokuapp.com/add-user',
+            url: 'https://powerful-peak-61640.herokuapp.com/add-user',
             headers: {
                 'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json',

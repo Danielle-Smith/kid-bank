@@ -13,7 +13,7 @@ function UserDetails(props) {
             const amount = {
                 amount: state.amount
             }
-            axios.patch(`https://dds-piggy-bank-db.herokuapp.com/user-update/${props.match.params.slug}`, {
+            axios.patch(`https://powerful-peak-61640.herokuapp.com/user-update/${props.match.params.slug}`, {
                 amount: state.amount
             }).then(
                 console.log(state.amount, inputs.amount)
@@ -27,7 +27,7 @@ function UserDetails(props) {
 
             setCount(amount += inputAmount)
 
-            axios.patch(`https://dds-piggy-bank-db.herokuapp.com/user-update/${props.match.params.slug}`, {
+            axios.patch(`https://powerful-peak-61640.herokuapp.com/user-update/${props.match.params.slug}`, {
                 amount: amount
             }).then(
                 console.log(amount, inputAmount)
@@ -38,7 +38,7 @@ function UserDetails(props) {
 
     useEffect(() => {
         axios.get(
-            `https://dds-piggy-bank-db.herokuapp.com/user/${props.match.params.slug}`
+            `https://powerful-peak-61640.herokuapp.com/user/${props.match.params.slug}`
         )
             .then(response => setState(response.data), [])
             .catch(error => console.log(error));
@@ -46,7 +46,7 @@ function UserDetails(props) {
 
     const handleDelete = (e) => {
         let redirect = true
-        axios.delete(`https://dds-piggy-bank-db.herokuapp.com/delete-user/${props.match.params.slug}`
+        axios.delete(`https://powerful-peak-61640.herokuapp.com/delete-user/${props.match.params.slug}`
         ).then(res => {
             props.history.push("/");
         }).catch(error => {
